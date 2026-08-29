@@ -24,7 +24,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -165,51 +165,53 @@
       </div>
 
       <div class="hero__visual reveal" aria-hidden="true">
-        <svg class="skyline" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="bGreen" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#34c876"/>
-              <stop offset="1" stop-color="#1c8a4c"/>
-            </linearGradient>
-            <linearGradient id="bNavy" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#5457a8"/>
-              <stop offset="1" stop-color="#31335f"/>
-            </linearGradient>
-            <clipPath id="shineClip">
-              <rect x="20" y="40" width="380" height="320" rx="18"/>
-            </clipPath>
-          </defs>
+        <div class="signature-panel">
+          <svg class="skyline" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bGold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e7c583"/>
+                <stop offset="1" stop-color="#a9803a"/>
+              </linearGradient>
+              <linearGradient id="bCharcoal" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#3a3f4d"/>
+                <stop offset="1" stop-color="#20232c"/>
+              </linearGradient>
+              <clipPath id="shineClip">
+                <rect x="20" y="40" width="380" height="320" rx="24"/>
+              </clipPath>
+            </defs>
 
-          <rect x="20" y="40" width="380" height="320" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+            <rect x="20" y="40" width="380" height="320" rx="24" fill="rgba(255,255,255,0.03)" stroke="rgba(224,189,114,0.18)"/>
 
-          <g clip-path="url(#shineClip)">
-            <rect x="60" y="180" width="46" height="160" fill="url(#bNavy)"/>
-            <rect x="118" y="140" width="46" height="200" fill="url(#bGreen)"/>
-            <rect x="176" y="200" width="46" height="140" fill="url(#bNavy)"/>
-            <rect x="234" y="110" width="52" height="230" fill="url(#bGreen)"/>
-            <rect x="298" y="165" width="42" height="175" fill="url(#bNavy)"/>
+            <g clip-path="url(#shineClip)">
+              <rect x="60" y="180" width="46" height="160" fill="url(#bCharcoal)"/>
+              <rect x="118" y="140" width="46" height="200" fill="url(#bGold)"/>
+              <rect x="176" y="200" width="46" height="140" fill="url(#bCharcoal)"/>
+              <rect x="234" y="110" width="52" height="230" fill="url(#bGold)"/>
+              <rect x="298" y="165" width="42" height="175" fill="url(#bCharcoal)"/>
 
-            <g fill="rgba(255,255,255,0.55)">
-              <rect x="70" y="195" width="8" height="8"/><rect x="86" y="195" width="8" height="8"/>
-              <rect x="70" y="215" width="8" height="8"/><rect x="86" y="215" width="8" height="8"/>
-              <rect x="70" y="235" width="8" height="8"/><rect x="86" y="235" width="8" height="8"/>
-              <rect x="128" y="155" width="8" height="8"/><rect x="146" y="155" width="8" height="8"/>
-              <rect x="128" y="175" width="8" height="8"/><rect x="146" y="175" width="8" height="8"/>
-              <rect x="128" y="195" width="8" height="8"/><rect x="146" y="195" width="8" height="8"/>
-              <rect x="244" y="128" width="9" height="9"/><rect x="264" y="128" width="9" height="9"/>
-              <rect x="244" y="150" width="9" height="9"/><rect x="264" y="150" width="9" height="9"/>
-              <rect x="244" y="172" width="9" height="9"/><rect x="264" y="172" width="9" height="9"/>
+              <g fill="rgba(255,255,255,0.4)">
+                <rect x="70" y="195" width="8" height="8"/><rect x="86" y="195" width="8" height="8"/>
+                <rect x="70" y="215" width="8" height="8"/><rect x="86" y="215" width="8" height="8"/>
+                <rect x="70" y="235" width="8" height="8"/><rect x="86" y="235" width="8" height="8"/>
+                <rect x="128" y="155" width="8" height="8"/><rect x="146" y="155" width="8" height="8"/>
+                <rect x="128" y="175" width="8" height="8"/><rect x="146" y="175" width="8" height="8"/>
+                <rect x="128" y="195" width="8" height="8"/><rect x="146" y="195" width="8" height="8"/>
+                <rect x="244" y="128" width="9" height="9"/><rect x="264" y="128" width="9" height="9"/>
+                <rect x="244" y="150" width="9" height="9"/><rect x="264" y="150" width="9" height="9"/>
+                <rect x="244" y="172" width="9" height="9"/><rect x="264" y="172" width="9" height="9"/>
+              </g>
+
+              <rect class="shine-sweep" x="-140" y="20" width="90" height="360" fill="rgba(255,255,255,0.5)" transform="rotate(20 0 0)"/>
             </g>
 
-            <rect class="shine-sweep" x="-140" y="20" width="90" height="360" fill="rgba(255,255,255,0.55)" transform="rotate(20 0 0)"/>
-          </g>
-
-          <g class="sparkle-group" fill="#ffd76a">
-            <path class="sparkle sparkle--a" d="M340 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
-            <path class="sparkle sparkle--b" d="M70 90l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-            <path class="sparkle sparkle--c" d="M210 60l3.5 9 9 3.5-9 3.5-3.5 9-3.5-9-9-3.5 9-3.5z"/>
-          </g>
-        </svg>
+            <g class="sparkle-group" fill="#e0bd72">
+              <path class="sparkle sparkle--a" d="M340 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+              <path class="sparkle sparkle--b" d="M70 90l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+              <path class="sparkle sparkle--c" d="M210 60l3.5 9 9 3.5-9 3.5-3.5 9-3.5-9-9-3.5 9-3.5z"/>
+            </g>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
@@ -418,6 +420,14 @@
           <p>Scheduled delivery by our team, with a quality follow-up check.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CINEMATIC BREAK -->
+  <section class="cinematic reveal" aria-label="Our commitment">
+    <div class="cinematic__bg" aria-hidden="true"></div>
+    <div class="container cinematic__inner">
+      <p class="cinematic__quote">From spotless deep cleans to full-scale facility management — Dust to Shine brings five years of trusted, verified, GST-compliant service to homes, offices and communities across Chennai.</p>
     </div>
   </section>
 
