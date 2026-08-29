@@ -121,6 +121,35 @@
     });
   }
 
+  /* ---------- Gentle parallax on the cinematic section ---------- */
+  const cinematicBg = document.querySelector(".cinematic__bg");
+  const cinematicSection = document.querySelector(".cinematic");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (cinematicBg && cinematicSection && !prefersReducedMotion) {
+    let ticking = false;
+    const updateParallax = () => {
+      const rect = cinematicSection.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      if (rect.bottom > 0 && rect.top < viewportH) {
+        const progress = (rect.top) / (viewportH + rect.height);
+        cinematicBg.style.transform = `translateY(${progress * -60}px)`;
+      }
+      ticking = false;
+    };
+    document.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+    updateParallax();
+  }
+
   /* ---------- Pricing toggle ---------- */
   const toggleBtns = document.querySelectorAll(".toggle__btn");
   const swappableEls = document.querySelectorAll("[data-onetime][data-amc]");

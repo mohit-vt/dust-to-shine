@@ -206,6 +206,36 @@ button { font: inherit; cursor: pointer; }
 .blob--navy { width: 480px; height: 480px; background: var(--charcoal-600); bottom: -180px; left: -120px; animation-delay: -6s; }
 @keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-30px) scale(1.08); } }
 
+/* Dust motes — small light particles drifting up through the hero, echoing "dust to shine" */
+.dust-motes { position: absolute; inset: 0; overflow: hidden; }
+.dust-motes span {
+  position: absolute; bottom: -10px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,189,114,.9), rgba(224,189,114,0) 70%);
+  animation: motesDrift linear infinite;
+  opacity: 0;
+}
+.dust-motes span:nth-child(1) { left: 6%; width: 4px; height: 4px; animation-duration: 13s; animation-delay: 0s; }
+.dust-motes span:nth-child(2) { left: 14%; width: 3px; height: 3px; animation-duration: 16s; animation-delay: 1.2s; }
+.dust-motes span:nth-child(3) { left: 22%; width: 5px; height: 5px; animation-duration: 11s; animation-delay: 2.4s; }
+.dust-motes span:nth-child(4) { left: 31%; width: 2px; height: 2px; animation-duration: 18s; animation-delay: .6s; }
+.dust-motes span:nth-child(5) { left: 40%; width: 4px; height: 4px; animation-duration: 14s; animation-delay: 3.1s; }
+.dust-motes span:nth-child(6) { left: 49%; width: 3px; height: 3px; animation-duration: 17s; animation-delay: 1.8s; }
+.dust-motes span:nth-child(7) { left: 57%; width: 5px; height: 5px; animation-duration: 12s; animation-delay: 4s; }
+.dust-motes span:nth-child(8) { left: 65%; width: 3px; height: 3px; animation-duration: 15s; animation-delay: .3s; }
+.dust-motes span:nth-child(9) { left: 73%; width: 4px; height: 4px; animation-duration: 19s; animation-delay: 2.7s; }
+.dust-motes span:nth-child(10) { left: 80%; width: 2px; height: 2px; animation-duration: 13.5s; animation-delay: 3.6s; }
+.dust-motes span:nth-child(11) { left: 87%; width: 5px; height: 5px; animation-duration: 16.5s; animation-delay: 1s; }
+.dust-motes span:nth-child(12) { left: 92%; width: 3px; height: 3px; animation-duration: 11.5s; animation-delay: 4.5s; }
+.dust-motes span:nth-child(13) { left: 37%; width: 3px; height: 3px; animation-duration: 20s; animation-delay: 5.2s; }
+.dust-motes span:nth-child(14) { left: 62%; width: 2px; height: 2px; animation-duration: 14.5s; animation-delay: 2.1s; }
+@keyframes motesDrift {
+  0% { transform: translate(0, 0); opacity: 0; }
+  10% { opacity: .8; }
+  50% { transform: translate(18px, -220px); opacity: .5; }
+  90% { opacity: 0; }
+  100% { transform: translate(-12px, -420px); opacity: 0; }
+}
+
 .grid-overlay {
   position: absolute; inset: 0;
   background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
@@ -309,6 +339,16 @@ button { font: inherit; cursor: pointer; }
 }
 .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
 .service-card:hover::before { opacity: 1; }
+
+/* Soft light-sweep on hover — shared by service, why-us and info cards */
+.service-card::after, .why-card::after, .info-card::after {
+  content: ""; position: absolute; top: 0; left: -75%; width: 45%; height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-18deg); pointer-events: none; z-index: 2;
+  transition: left .75s var(--ease);
+}
+.why-card::after, .info-card::after { background: linear-gradient(115deg, transparent, rgba(224,189,114,.16), transparent); }
+.service-card:hover::after, .why-card:hover::after, .info-card:hover::after { left: 130%; }
 .service-card--feature { background: linear-gradient(160deg, var(--charcoal-900), var(--charcoal-700)); border-color: transparent; }
 .service-card--feature h3, .service-card--feature p { color: #fff; }
 .service-card--feature p { color: rgba(238,235,227,.7); }
@@ -338,6 +378,7 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Why us ---------- */
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; position: relative; z-index: 1; }
 .why-card {
+  position: relative; overflow: hidden;
   background: rgba(255,255,255,.04); border: 1px solid rgba(224,189,114,.14); border-radius: var(--radius-md);
   padding: 28px 24px; transition: transform .4s var(--ease), background .4s var(--ease);
 }
@@ -380,9 +421,10 @@ button { font: inherit; cursor: pointer; }
   display: flex; align-items: center; justify-content: center;
 }
 .cinematic__bg {
-  position: absolute; inset: 0;
+  position: absolute; left: 0; right: 0; top: -12%; height: 124%;
   background-image: var(--grain);
   opacity: .5; mix-blend-mode: overlay;
+  will-change: transform;
 }
 .cinematic__bg::before {
   content: ""; position: absolute; inset: 0;
@@ -417,7 +459,7 @@ button { font: inherit; cursor: pointer; }
   padding: 34px 28px; display: flex; flex-direction: column;
   transition: transform .4s var(--ease), box-shadow .4s var(--ease);
 }
-.price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md), inset 0 0 0 1px rgba(205,165,80,.3); }
 .price-card--highlight { border-color: var(--gold-500); box-shadow: var(--shadow-md); transform: scale(1.03); }
 .price-card--highlight:hover { transform: scale(1.03) translateY(-6px); }
 .price-card__badge {
@@ -460,7 +502,7 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: start; }
 .contact-info { display: flex; flex-direction: column; gap: 16px; }
-.info-card { display: flex; gap: 16px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 20px; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.info-card { position: relative; overflow: hidden; display: flex; gap: 16px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 20px; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
 .info-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
 .info-card svg { width: 22px; height: 22px; color: var(--gold-600); flex-shrink: 0; margin-top: 2px; }
 .info-card h3 { font-size: 15.5px; font-weight: 600; margin-bottom: 4px; }
