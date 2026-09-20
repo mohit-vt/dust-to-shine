@@ -53,7 +53,17 @@
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
     "opens": "09:00",
     "closes": "19:00"
-  }
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Carpet Shampooing" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deep House & Office Cleaning" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pest Control" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marble Polishing" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mosaic Polishing" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cleaning Equipment & Materials Supply" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manpower Supply" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Complete Facility Management" } }
+  ]
 }
 </script>
 </head>
@@ -62,12 +72,12 @@
 <!-- Preloader -->
 <div class="preloader" id="preloader" aria-hidden="true">
   <div class="preloader__mark">
-    <svg viewBox="0 0 64 64" width="56" height="56">
+    <svg viewBox="0 0 64 64" width="52" height="52">
       <polyline class="preloader__path" points="6,34 24,50 58,14" fill="none" stroke="url(#pg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
       <defs>
         <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#2fbf6e"/>
-          <stop offset="1" stop-color="#4b4e99"/>
+          <stop offset="0" stop-color="#4fd8f2"/>
+          <stop offset="1" stop-color="#e0bd72"/>
         </linearGradient>
       </defs>
     </svg>
@@ -75,10 +85,9 @@
   <p>Dust to Shine</p>
 </div>
 
-<!-- Scroll progress -->
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- Header -->
+<!-- HEADER -->
 <header class="site-header" id="siteHeader">
   <div class="container header__inner">
     <a href="#home" class="brand">
@@ -91,302 +100,347 @@
 
     <nav class="nav" id="mainNav" aria-label="Primary">
       <a href="#services">Services</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#process">Process</a>
+      <a href="#industries">Industries</a>
+      <a href="#about">About</a>
+      <a href="#amc">AMC Plans</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <div class="header__actions">
-      <a href="tel:+919003177051" class="header__call" aria-label="Call Dust to Shine">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:+919003177051" class="header__call btn--ghost btn" aria-label="Call Dust to Shine">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>+91 90031 77051</span>
       </a>
-      <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20a%20free%20quote%20for%20facility%20management%20services." target="_blank" rel="noopener" class="btn btn--whatsapp">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2.06 22l5.31-1.35a9.86 9.86 0 0 0 4.67 1.19h.01c5.46 0 9.9-4.45 9.9-9.93A9.83 9.83 0 0 0 12.04 2Zm5.79 14.16c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.61-2.92-1.26-4.82-4.19-4.97-4.39-.15-.2-1.19-1.58-1.19-3.02s.75-2.14 1.02-2.43c.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.24.58.81 2 .88 2.14.07.15.11.32.02.51-.09.2-.14.32-.28.5-.14.17-.29.38-.42.51-.14.14-.29.29-.12.57.16.29.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.28 1.4.29.15.46.13.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.15.26.09 1.66.79 1.94.93.29.15.48.22.55.34.07.13.07.72-.17 1.42Z"/></svg>
+      <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20a%20free%20quote%20for%20facility%20management%20services." target="_blank" rel="noopener" class="btn btn--whatsapp btn--sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2.06 22l5.31-1.35a9.86 9.86 0 0 0 4.67 1.19h.01c5.46 0 9.9-4.45 9.9-9.93A9.83 9.83 0 0 0 12.04 2Zm5.79 14.16c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.61-2.92-1.26-4.82-4.19-4.97-4.39-.15-.2-1.19-1.58-1.19-3.02s.75-2.14 1.02-2.43c.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.24.58.81 2 .88 2.14.07.15.11.32.02.51-.09.2-.14.32-.28.5-.14.17-.29.38-.42.51-.14.14-.29.29-.12.57.16.29.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.28 1.4.29.15.46.13.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.15.26.09 1.66.79 1.94.93.29.15.48.22.55.34.07.13.07.72-.17 1.42Z"/></svg>
         <span>Book on WhatsApp</span>
       </a>
     </div>
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navOverlay">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
+<!-- Mobile full-screen nav -->
+<div class="nav-overlay" id="navOverlay">
+  <a href="#services">Services</a>
+  <a href="#industries">Industries</a>
+  <a href="#about">About</a>
+  <a href="#amc">AMC Plans</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+  <div class="nav-overlay__actions">
+    <a href="https://wa.me/919003177051" target="_blank" rel="noopener" class="btn btn--whatsapp btn--block">Chat on WhatsApp</a>
+    <a href="tel:+919003177051" class="btn btn--outline btn--block">Call +91 90031 77051</a>
+  </div>
+</div>
+
 <main>
 
-  <!-- HERO -->
+  <!-- 1 + 2 : CINEMATIC HERO -->
   <section class="hero" id="home">
-    <div class="hero__blobs" aria-hidden="true">
-      <span class="blob blob--green"></span>
-      <span class="blob blob--navy"></span>
-      <span class="grid-overlay"></span>
-      <span class="hero__spotlight" id="spotlight"></span>
-      <div class="dust-motes">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-      </div>
-    </div>
+    <span class="hero__spotlight" id="spotlight" aria-hidden="true"></span>
 
     <div class="container hero__inner">
       <div class="hero__copy reveal">
         <span class="pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21.8 9l-5 4.87L18.1 21 12 17.4 5.9 21l1.3-7.13-5-4.87 6.9-.74L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L21.8 9l-5 4.87L18.1 21 12 17.4 5.9 21l1.3-7.13-5-4.87 6.9-.74L12 2z"/></svg>
           ISO 9001:2015 Certified &middot; Udyam (MSME) Registered
         </span>
-        <h1>Premium facility management, delivered with Chennai's personal touch.</h1>
+        <h1>From dust to shine — <em>we transform every space.</em></h1>
         <p class="hero__lead">
-          From spotless deep cleans to full-scale facility management — Dust to Shine brings five years of trusted,
-          verified, GST-compliant service to homes, offices and communities across Chennai.
+          Professional cleaning, polishing, pest control, manpower and complete facility-management
+          solutions for homes and businesses across Chennai — five years of trusted, GST-compliant service.
         </p>
         <div class="hero__ctas">
-          <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20to%20book%20a%20free%20inspection." target="_blank" rel="noopener" class="btn btn--primary btn--shine">
-            <span>Book Free Inspection</span>
+          <a href="#contact" class="btn btn--primary btn--shine">
+            <span>Get a Free Quote</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#services" class="btn btn--ghost">Explore Services</a>
+          <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20to%20book%20a%20free%20inspection." target="_blank" rel="noopener" class="btn btn--whatsapp">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2.06 22l5.31-1.35a9.86 9.86 0 0 0 4.67 1.19h.01c5.46 0 9.9-4.45 9.9-9.93A9.83 9.83 0 0 0 12.04 2Zm5.79 14.16c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.61-2.92-1.26-4.82-4.19-4.97-4.39-.15-.2-1.19-1.58-1.19-3.02s.75-2.14 1.02-2.43c.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.24.58.81 2 .88 2.14.07.15.11.32.02.51-.09.2-.14.32-.28.5-.14.17-.29.38-.42.51-.14.14-.29.29-.12.57.16.29.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.28 1.4.29.15.46.13.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.15.26.09 1.66.79 1.94.93.29.15.48.22.55.34.07.13.07.72-.17 1.42Z"/></svg>
+            <span>Chat on WhatsApp</span>
+          </a>
         </div>
 
         <div class="hero__stats">
-          <div class="stat">
-            <span class="stat__num" data-count="5" data-suffix="+">0</span>
-            <span class="stat__label">Years in Chennai</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="8">0</span>
-            <span class="stat__label">Service Categories</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="5">0</span>
-            <span class="stat__label">Trained Experts</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" data-count="100" data-suffix="%">0</span>
-            <span class="stat__label">Transparent Billing</span>
-          </div>
+          <div class="stat"><span class="stat__num" data-count="5" data-suffix="+">0</span><span class="stat__label">Years in Chennai</span></div>
+          <div class="stat"><span class="stat__num" data-count="8">0</span><span class="stat__label">Service categories</span></div>
+          <div class="stat"><span class="stat__num" data-count="5">0</span><span class="stat__label">Trained experts</span></div>
+          <div class="stat"><span class="stat__num" data-count="100" data-suffix="%">0</span><span class="stat__label">Transparent billing</span></div>
         </div>
       </div>
 
       <div class="hero__visual reveal" aria-hidden="true">
-        <div class="signature-panel">
-          <svg class="skyline" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="bGold" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#e7c583"/>
-                <stop offset="1" stop-color="#a9803a"/>
-              </linearGradient>
-              <linearGradient id="bCharcoal" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#3a3f4d"/>
-                <stop offset="1" stop-color="#20232c"/>
-              </linearGradient>
-              <clipPath id="shineClip">
-                <rect x="20" y="40" width="380" height="320" rx="24"/>
-              </clipPath>
-            </defs>
-
-            <rect x="20" y="40" width="380" height="320" rx="24" fill="rgba(255,255,255,0.03)" stroke="rgba(224,189,114,0.18)"/>
-
-            <g clip-path="url(#shineClip)">
-              <rect x="60" y="180" width="46" height="160" fill="url(#bCharcoal)"/>
-              <rect x="118" y="140" width="46" height="200" fill="url(#bGold)"/>
-              <rect x="176" y="200" width="46" height="140" fill="url(#bCharcoal)"/>
-              <rect x="234" y="110" width="52" height="230" fill="url(#bGold)"/>
-              <rect x="298" y="165" width="42" height="175" fill="url(#bCharcoal)"/>
-
-              <g fill="rgba(255,255,255,0.4)">
-                <rect x="70" y="195" width="8" height="8"/><rect x="86" y="195" width="8" height="8"/>
-                <rect x="70" y="215" width="8" height="8"/><rect x="86" y="215" width="8" height="8"/>
-                <rect x="70" y="235" width="8" height="8"/><rect x="86" y="235" width="8" height="8"/>
-                <rect x="128" y="155" width="8" height="8"/><rect x="146" y="155" width="8" height="8"/>
-                <rect x="128" y="175" width="8" height="8"/><rect x="146" y="175" width="8" height="8"/>
-                <rect x="128" y="195" width="8" height="8"/><rect x="146" y="195" width="8" height="8"/>
-                <rect x="244" y="128" width="9" height="9"/><rect x="264" y="128" width="9" height="9"/>
-                <rect x="244" y="150" width="9" height="9"/><rect x="264" y="150" width="9" height="9"/>
-                <rect x="244" y="172" width="9" height="9"/><rect x="264" y="172" width="9" height="9"/>
+        <div class="transform-visual">
+          <div class="transform-visual__room transform-visual__before">
+            <svg class="room-graphic" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="380" fill="#171a1f"/>
+              <rect x="0" y="230" width="420" height="150" fill="#20232a"/>
+              <g stroke="#2b2f38" stroke-width="1.5">
+                <line x1="0" y1="260" x2="420" y2="260"/><line x1="0" y1="290" x2="420" y2="290"/>
+                <line x1="0" y1="320" x2="420" y2="320"/><line x1="0" y1="350" x2="420" y2="350"/>
               </g>
-
-              <rect class="shine-sweep" x="-140" y="20" width="90" height="360" fill="rgba(255,255,255,0.5)" transform="rotate(20 0 0)"/>
-            </g>
-
-            <g class="sparkle-group" fill="#e0bd72">
-              <path class="sparkle sparkle--a" d="M340 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
-              <path class="sparkle sparkle--b" d="M70 90l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-              <path class="sparkle sparkle--c" d="M210 60l3.5 9 9 3.5-9 3.5-3.5 9-3.5-9-9-3.5 9-3.5z"/>
-            </g>
-          </svg>
+              <rect x="60" y="60" width="120" height="150" rx="4" fill="#262a32"/>
+              <rect x="230" y="90" width="90" height="120" rx="4" fill="#22252c"/>
+              <rect x="0" y="0" width="420" height="8" fill="#0e0f12"/>
+              <g fill="#3a3e46" opacity=".6">
+                <circle cx="90" cy="110" r="2"/><circle cx="140" cy="150" r="1.6"/><circle cx="260" cy="130" r="2"/>
+                <circle cx="310" cy="170" r="1.4"/><circle cx="180" cy="260" r="1.8"/><circle cx="340" cy="290" r="2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="transform-visual__after">
+            <svg class="room-graphic" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="fGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3ddb0"/><stop offset="1" stop-color="#c79a4e"/></linearGradient>
+                <linearGradient id="fCyan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6f2ff"/><stop offset="1" stop-color="#22b8d6"/></linearGradient>
+              </defs>
+              <rect width="420" height="380" fill="#0c1120"/>
+              <rect x="0" y="230" width="420" height="150" fill="#101830"/>
+              <g stroke="rgba(79,216,242,.28)" stroke-width="1.5">
+                <line x1="0" y1="260" x2="420" y2="260"/><line x1="0" y1="290" x2="420" y2="290"/>
+                <line x1="0" y1="320" x2="420" y2="320"/><line x1="0" y1="350" x2="420" y2="350"/>
+              </g>
+              <rect x="60" y="60" width="120" height="150" rx="10" fill="url(#fGold)" opacity=".92"/>
+              <rect x="230" y="90" width="90" height="120" rx="10" fill="url(#fCyan)" opacity=".85"/>
+              <rect x="0" y="0" width="420" height="8" fill="#f3ddb0"/>
+              <g fill="#fff" opacity=".85">
+                <path d="M340 60l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+                <path d="M70 90l2.4 6 6 2.4-6 2.4-2.4 6-2.4-6-6-2.4 6-2.4z"/>
+              </g>
+            </svg>
+          </div>
+          <div class="transform-visual__sweep" aria-hidden="true"></div>
+          <div class="motes"></div>
+          <div class="transform-visual__tag"><span>Before</span><span>After</span></div>
         </div>
       </div>
     </div>
+
+    <div class="hero__scroll-cue">
+      <span>Scroll to explore</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
   </section>
 
-  <!-- TRUST MARQUEE -->
-  <section class="trust-strip" aria-label="Certifications">
+  <!-- 3 : TRUST STRIP -->
+  <section class="trust-strip" aria-label="Certifications and trust markers">
     <div class="trust-strip__track">
       <div class="trust-strip__group">
-        <span class="trust-chip">ISO 9001:2015 Certified</span>
-        <span class="trust-chip">Udyam Registered &middot; UDYAM-TN-02-0138197</span>
-        <span class="trust-chip">GSTIN 33BCLPD8245A1Z0</span>
-        <span class="trust-chip">5+ Years Serving Chennai</span>
-        <span class="trust-chip">Trained &amp; Verified Staff</span>
-        <span class="trust-chip">ISO 9001:2015 Certified</span>
-        <span class="trust-chip">Udyam Registered &middot; UDYAM-TN-02-0138197</span>
-        <span class="trust-chip">GSTIN 33BCLPD8245A1Z0</span>
-        <span class="trust-chip">5+ Years Serving Chennai</span>
-        <span class="trust-chip">Trained &amp; Verified Staff</span>
+        <span class="trust-chip">Trained &amp; verified workforce</span>
+        <span class="trust-chip">Professional equipment &amp; chemicals</span>
+        <span class="trust-chip">Residential and commercial service</span>
+        <span class="trust-chip">One-time visits or AMC coverage</span>
+        <span class="trust-chip">GST-invoiced billing</span>
       </div>
       <div class="trust-strip__group" aria-hidden="true">
-        <span class="trust-chip">ISO 9001:2015 Certified</span>
-        <span class="trust-chip">Udyam Registered &middot; UDYAM-TN-02-0138197</span>
-        <span class="trust-chip">GSTIN 33BCLPD8245A1Z0</span>
-        <span class="trust-chip">5+ Years Serving Chennai</span>
-        <span class="trust-chip">Trained &amp; Verified Staff</span>
-        <span class="trust-chip">ISO 9001:2015 Certified</span>
-        <span class="trust-chip">Udyam Registered &middot; UDYAM-TN-02-0138197</span>
-        <span class="trust-chip">GSTIN 33BCLPD8245A1Z0</span>
-        <span class="trust-chip">5+ Years Serving Chennai</span>
-        <span class="trust-chip">Trained &amp; Verified Staff</span>
+        <span class="trust-chip">Trained &amp; verified workforce</span>
+        <span class="trust-chip">Professional equipment &amp; chemicals</span>
+        <span class="trust-chip">Residential and commercial service</span>
+        <span class="trust-chip">One-time visits or AMC coverage</span>
+        <span class="trust-chip">GST-invoiced billing</span>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- 4 : SERVICES SHOWCASE -->
   <section class="section" id="services">
     <div class="container">
       <div class="section__head reveal">
         <span class="eyebrow">What we do</span>
         <h2>Eight services. One trusted partner.</h2>
-        <p>Every service is available as a one-time booking or a scheduled AMC (Annual Maintenance Contract) — whichever fits how you live or work.</p>
+        <p>Every service is available as a one-time booking or a scheduled AMC — whichever fits how you live or work. Drag or scroll to browse.</p>
       </div>
+    </div>
 
-      <div class="services-grid">
+    <div class="container container--wide">
+      <div class="services-scroller" tabindex="0" aria-label="Services, scrollable">
 
-        <article class="service-card reveal" style="--d:0ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h.01M11 14h.01M15 14h.01"/></svg>
-          </div>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h.01M11 14h.01M15 14h.01"/></svg></div>
           <h3>Carpet Shampooing</h3>
           <p>Deep steam &amp; shampoo cleaning that lifts stains, dust mites and odours — restoring carpets like new.</p>
           <a class="service-card__link" href="#contact" data-service="Carpet Shampooing">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <article class="service-card reveal" style="--d:60ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3-6 6-9 9-9s6 3 9 9"/><path d="M12 12V3"/><path d="M9 6l3-3 3 3"/></svg>
-          </div>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3-6 6-9 9-9s6 3 9 9"/><path d="M12 12V3"/><path d="M9 6l3-3 3 3"/></svg></div>
           <h3>Deep House &amp; Office Cleaning</h3>
           <p>Floor-to-ceiling cleaning for homes, apartments and offices — kitchens, bathrooms, sofas and every corner.</p>
           <a class="service-card__link" href="#contact" data-service="Deep House &amp; Office Cleaning">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <article class="service-card reveal" style="--d:120ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
-          </div>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
           <h3>Pest Control</h3>
           <p>Safe, effective treatments for cockroaches, termites and rodents — general pest management done right.</p>
           <a class="service-card__link" href="#contact" data-service="Pest Control">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <article class="service-card reveal" style="--d:180ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
           <h3>Marble Polishing</h3>
           <p>Professional diamond floor polishing that restores the natural shine and smoothness of marble.</p>
           <a class="service-card__link" href="#contact" data-service="Marble Polishing">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <article class="service-card reveal" style="--d:240ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-          </div>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
           <h3>Mosaic Polishing</h3>
           <p>Specialist mosaic floor grinding and polishing, finished to a smooth, mirror-like shine.</p>
           <a class="service-card__link" href="#contact" data-service="Mosaic Polishing">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <article class="service-card reveal" style="--d:300ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l1-3h14l1 3"/><path d="M5 7h14l-1.2 12a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 11v5M15 11v5"/></svg>
-          </div>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l1-3h14l1 3"/><path d="M5 7h14l-1.2 12a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 11v5M15 11v5"/></svg></div>
           <h3>Cleaning Equipment &amp; Materials</h3>
           <p>Industrial-grade machines, chemicals and consumables supplied for businesses and housekeeping teams.</p>
           <a class="service-card__link" href="#contact" data-service="Cleaning Equipment &amp; Materials">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <article class="service-card reveal" style="--d:360ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-8 0"/><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
-          </div>
+        <article class="service-card reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-8 0"/><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></div>
           <h3>Manpower Supply</h3>
           <p>Trained housekeeping staff, office boys and facility personnel available on flexible contracts.</p>
           <a class="service-card__link" href="#contact" data-service="Manpower Supply">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <article class="service-card service-card--feature reveal" style="--d:420ms">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
-          </div>
+        <article class="service-card service-card--feature reveal">
+          <div class="service-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg></div>
           <h3>Complete Facility Management</h3>
           <p>End-to-end FM for residential societies, offices and commercial spaces — one partner for everything.</p>
           <a class="service-card__link" href="#contact" data-service="Complete Facility Management">Get a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
       </div>
+      <p class="services-scroller__hint">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+        Scroll sideways to see all eight services
+      </p>
     </div>
   </section>
 
-  <!-- WHY US -->
-  <section class="section section--dark" id="why-us">
-    <div class="hero__blobs hero__blobs--soft" aria-hidden="true">
-      <span class="blob blob--green"></span>
-      <span class="blob blob--navy"></span>
-    </div>
+  <!-- 5 : BEFORE & AFTER EXPERIENCE -->
+  <section class="section section--tint" id="transformations">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow eyebrow--light">Why Dust to Shine</span>
-        <h2 class="h2--light">Verified. Certified. Genuinely reliable.</h2>
-        <p class="p--light">The trust signals most local cleaning services simply don't have.</p>
+        <span class="eyebrow">See the difference</span>
+        <h2>Drag the slider to see the transformation.</h2>
+        <p>An illustrative preview of what a Dust to Shine visit looks like — from a neglected, dust-laden surface to a polished, well-kept one. Real project photography will be added here as each job is completed.</p>
+      </div>
+
+      <div class="ba-tabs reveal" data-ba-slider>
+        <button class="ba-tab is-active" data-category="floors">Floor Polishing</button>
+        <button class="ba-tab" data-category="carpet">Carpet Shampooing</button>
+        <button class="ba-tab" data-category="deep-clean">Deep Cleaning</button>
+      </div>
+
+      <div class="ba-slider reveal">
+        <div class="ba-slider__before">
+          <svg class="room-graphic" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="800" height="400" fill="#1b1d22"/>
+            <g stroke="#2c2f36" stroke-width="2">
+              <line x1="0" y1="80" x2="800" y2="80"/><line x1="0" y1="160" x2="800" y2="160"/>
+              <line x1="0" y1="240" x2="800" y2="240"/><line x1="0" y1="320" x2="800" y2="320"/>
+              <line x1="100" y1="0" x2="100" y2="400"/><line x1="300" y1="0" x2="300" y2="400"/>
+              <line x1="500" y1="0" x2="500" y2="400"/><line x1="700" y1="0" x2="700" y2="400"/>
+            </g>
+            <g fill="#34373f" opacity=".5">
+              <circle cx="160" cy="120" r="3"/><circle cx="420" cy="200" r="2.4"/><circle cx="620" cy="280" r="3"/>
+              <circle cx="250" cy="300" r="2"/><circle cx="700" cy="140" r="2.6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ba-slider__after">
+          <svg class="room-graphic" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="afterFloor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#132038"/><stop offset="1" stop-color="#0c1526"/></linearGradient></defs>
+            <rect width="800" height="400" fill="url(#afterFloor)"/>
+            <g stroke="rgba(79,216,242,.35)" stroke-width="2">
+              <line x1="0" y1="80" x2="800" y2="80"/><line x1="0" y1="160" x2="800" y2="160"/>
+              <line x1="0" y1="240" x2="800" y2="240"/><line x1="0" y1="320" x2="800" y2="320"/>
+              <line x1="100" y1="0" x2="100" y2="400"/><line x1="300" y1="0" x2="300" y2="400"/>
+              <line x1="500" y1="0" x2="500" y2="400"/><line x1="700" y1="0" x2="700" y2="400"/>
+            </g>
+            <rect x="0" y="0" width="800" height="6" fill="#e0bd72" opacity=".8"/>
+            <g fill="#f3ddb0">
+              <path d="M700 90l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+              <path d="M150 250l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+            </g>
+          </svg>
+        </div>
+        <div class="ba-slider__label ba-slider__label--before">Before</div>
+        <div class="ba-slider__label ba-slider__label--after">After</div>
+        <div class="ba-slider__handle"><div class="ba-slider__grip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></div></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" />
+      </div>
+      <p class="ba-note reveal">Illustrative comparison — not a customer's actual project. We never publish fabricated project photography; genuine before-and-after images are added here only once real jobs are documented.</p>
+    </div>
+  </section>
+
+  <!-- 6 : COMPLETE FACILITY MANAGEMENT -->
+  <section class="section" id="about">
+    <div class="container fm-split">
+      <div class="reveal">
+        <span class="eyebrow">Complete facility management</span>
+        <h2>One provider. Every facility need, coordinated.</h2>
+        <p>Dust to Shine combines cleaning, polishing, pest control, manpower supply and equipment sourcing into a single, coordinated service — so residential societies, offices and commercial spaces get one point of contact instead of juggling multiple vendors.</p>
+
+        <div class="fm-list">
+          <div class="fm-item">
+            <span class="fm-item__num">01</span>
+            <div><h4>Cleaning &amp; polishing</h4><p>Carpet shampooing, deep cleans, marble and mosaic polishing scheduled around your space.</p></div>
+          </div>
+          <div class="fm-item">
+            <span class="fm-item__num">02</span>
+            <div><h4>Manpower &amp; supplies</h4><p>Trained housekeeping staff and industrial-grade equipment or chemicals, supplied as needed.</p></div>
+          </div>
+          <div class="fm-item">
+            <span class="fm-item__num">03</span>
+            <div><h4>Maintenance coordination</h4><p>One team managing schedules, quality checks and follow-ups across every service you use.</p></div>
+          </div>
+          <div class="fm-item">
+            <span class="fm-item__num">04</span>
+            <div><h4>AMC continuity</h4><p>Move from one-time bookings to a scheduled Annual Maintenance Contract whenever you're ready.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fm-panel reveal">
+        <span class="fm-panel__ring" aria-hidden="true"></span>
+        <span class="fm-panel__ring fm-panel__ring--2" aria-hidden="true"></span>
+        <div class="fm-panel__core">
+          <strong>8-in-1</strong>
+          <span>facility services under one roof</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 : WHY CHOOSE US -->
+  <section class="section section--tint" id="why-us">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Why Dust to Shine</span>
+        <h2>Verified. Certified. Genuinely reliable.</h2>
+        <p>The trust signals most local cleaning services simply don't have.</p>
       </div>
 
       <div class="why-grid">
-        <div class="why-card reveal" style="--d:0ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3>ISO 9001:2015 Certified</h3>
-          <p>Quality-managed processes, audited and certified — not just promised.</p>
-        </div>
-        <div class="why-card reveal" style="--d:60ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
-          <h3>Udyam (MSME) Registered</h3>
-          <p>Government-recognised enterprise &mdash; UDYAM-TN-02-0138197.</p>
-        </div>
-        <div class="why-card reveal" style="--d:120ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l2 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7l2-4Z"/><path d="M9 11h6M9 15h4"/></svg>
-          <h3>GST Compliant</h3>
-          <p>Fully transparent, invoiced billing on every job — GSTIN 33BCLPD8245A1Z0.</p>
-        </div>
-        <div class="why-card reveal" style="--d:180ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <h3>5+ Years in Chennai</h3>
-          <p>Operating since March 2020, with a proven local track record.</p>
-        </div>
-        <div class="why-card reveal" style="--d:240ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 12.8-6.4"/><path d="m16 17 2 2 4-4"/></svg>
-          <h3>Trained &amp; Verified Staff</h3>
-          <p>Uniformed, background-checked professionals you can trust in your space.</p>
-        </div>
-        <div class="why-card reveal" style="--d:300ms">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6Z"/></svg>
-          <h3>Fast Response</h3>
-          <p>Quick quotes and prompt scheduling — because your time matters.</p>
-        </div>
+        <div class="why-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>ISO 9001:2015 Certified</h3><p>Quality-managed processes, audited and certified — not just promised.</p></div>
+        <div class="why-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg><h3>Udyam (MSME) Registered</h3><p>Government-recognised enterprise — UDYAM-TN-02-0138197.</p></div>
+        <div class="why-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l2 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7l2-4Z"/><path d="M9 11h6M9 15h4"/></svg><h3>GST Compliant</h3><p>Fully transparent, invoiced billing on every job — GSTIN 33BCLPD8245A1Z0.</p></div>
+        <div class="why-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><h3>5+ Years in Chennai</h3><p>Operating since March 2020, with a proven local track record.</p></div>
+        <div class="why-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 12.8-6.4"/><path d="m16 17 2 2 4-4"/></svg><h3>Trained &amp; Verified Staff</h3><p>Uniformed, background-checked professionals you can trust in your space.</p></div>
+        <div class="why-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6Z"/></svg><h3>Fast Response</h3><p>Quick quotes and prompt scheduling — because your time matters.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
+  <!-- 8 : HOW IT WORKS -->
   <section class="section" id="process">
     <div class="container">
       <div class="section__head reveal">
@@ -399,30 +453,25 @@
         <svg class="process__line" viewBox="0 0 1000 4" preserveAspectRatio="none" aria-hidden="true">
           <line x1="0" y1="2" x2="1000" y2="2" stroke="currentColor" stroke-width="2" stroke-dasharray="1000" stroke-dashoffset="1000" />
         </svg>
-
-        <div class="process__step reveal" style="--d:0ms">
+        <div class="process__step reveal">
           <span class="process__num">1</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <h3>Reach out</h3>
+          <h3>Share your requirement</h3>
           <p>Call, WhatsApp or fill the form on this page.</p>
         </div>
-        <div class="process__step reveal" style="--d:120ms">
+        <div class="process__step reveal">
           <span class="process__num">2</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          <h3>Free assessment</h3>
-          <p>We understand your space and requirement, at no cost.</p>
+          <h3>Site inspection</h3>
+          <p>We assess your space and requirement, at no cost.</p>
         </div>
-        <div class="process__step reveal" style="--d:240ms">
+        <div class="process__step reveal">
           <span class="process__num">3</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
-          <h3>Transparent quote</h3>
+          <h3>Customized quote</h3>
           <p>Clear pricing, one-time or AMC — you decide, no hidden costs.</p>
         </div>
-        <div class="process__step reveal" style="--d:360ms">
+        <div class="process__step reveal">
           <span class="process__num">4</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-          <h3>Service &amp; follow-up</h3>
-          <p>Scheduled delivery by our team, with a quality follow-up check.</p>
+          <h3>Service &amp; quality check</h3>
+          <p>Scheduled delivery by our team, with a follow-up quality check.</p>
         </div>
       </div>
     </div>
@@ -436,13 +485,35 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="section section--tint" id="pricing">
+  <!-- 9 : INDUSTRIES SERVED -->
+  <section class="section section--tint" id="industries">
     <div class="container">
       <div class="section__head reveal">
-        <span class="eyebrow">Simple, honest pricing</span>
+        <span class="eyebrow">Who we serve</span>
+        <h2>Built for every kind of space.</h2>
+        <p>One facility-management partner across residential and commercial Chennai.</p>
+      </div>
+
+      <div class="industries-grid">
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg><span>Homes &amp; Apartments</span></div>
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-4h6v4M9 8h.01M15 8h.01M9 12h.01M15 12h.01"/></svg><span>Corporate Offices</span></div>
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg><span>Hotels &amp; Restaurants</span></div>
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9h16v11H4z"/><path d="M9 20v-6h6v6"/></svg><span>Retail Spaces</span></div>
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V6l-8-3-8 3v5c0 6.5 8 11 8 11Z"/><path d="M12 8v6M9 11h6"/></svg><span>Hospitals &amp; Institutions</span></div>
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg><span>Educational Institutions</span></div>
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18M9 21v-6h6v6"/></svg><span>Warehouses</span></div>
+        <div class="industry-tile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>Commercial Properties</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 : AMC SECTION -->
+  <section class="section" id="amc">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Simple, honest plans</span>
         <h2>Pay per visit, or relax with an AMC.</h2>
-        <p>Every plan is custom-quoted to your space &mdash; toggle below to see what's included.</p>
+        <p>Every plan is custom-quoted to your space — toggle below to compare one-time service against a scheduled Annual Maintenance Contract.</p>
       </div>
 
       <div class="toggle reveal" role="tablist" aria-label="Pricing mode">
@@ -451,7 +522,7 @@
       </div>
 
       <div class="pricing-grid">
-        <article class="price-card reveal" style="--d:0ms">
+        <article class="price-card reveal">
           <h3>Essential</h3>
           <p class="price-card__tag" data-onetime="Best for a single room or small space" data-amc="Quarterly scheduled visits">Best for a single room or small space</p>
           <ul class="price-card__list">
@@ -463,7 +534,7 @@
           <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27m%20interested%20in%20the%20Essential%20plan." target="_blank" rel="noopener" class="btn btn--outline">Request Quote</a>
         </article>
 
-        <article class="price-card price-card--highlight reveal" style="--d:100ms">
+        <article class="price-card price-card--highlight reveal">
           <span class="price-card__badge">Most popular</span>
           <h3>Professional</h3>
           <p class="price-card__tag" data-onetime="Ideal for full homes &amp; offices" data-amc="Monthly scheduled visits">Ideal for full homes &amp; offices</p>
@@ -477,7 +548,7 @@
           <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27m%20interested%20in%20the%20Professional%20plan." target="_blank" rel="noopener" class="btn btn--primary">Request Quote</a>
         </article>
 
-        <article class="price-card reveal" style="--d:200ms">
+        <article class="price-card reveal">
           <h3>Enterprise</h3>
           <p class="price-card__tag" data-onetime="For commercial &amp; large facilities" data-amc="Weekly / custom frequency">For commercial &amp; large facilities</p>
           <ul class="price-card__list">
@@ -490,29 +561,108 @@
           <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27m%20interested%20in%20the%20Enterprise%20plan." target="_blank" rel="noopener" class="btn btn--outline">Request Quote</a>
         </article>
       </div>
+
+      <div class="amc-note reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <p>Every plan is quoted after a free inspection of your space — we don't publish fixed pricing because the right scope depends on area, condition and frequency. Message us for an exact number.</p>
+      </div>
     </div>
   </section>
 
-  <!-- CTA BAND -->
+  <!-- 11 : PROJECT GALLERY -->
+  <section class="section section--tint" id="gallery">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Project gallery</span>
+        <h2>Our work, by category.</h2>
+        <p>We're building out a documented photo gallery as jobs are completed. Filter by service below — real project photography will replace these placeholders as it's captured.</p>
+      </div>
+
+      <div class="gallery-filters reveal">
+        <button class="gallery-filter is-active" data-filter="all">All</button>
+        <button class="gallery-filter" data-filter="carpet">Carpet Shampooing</button>
+        <button class="gallery-filter" data-filter="cleaning">Deep Cleaning</button>
+        <button class="gallery-filter" data-filter="pest">Pest Control</button>
+        <button class="gallery-filter" data-filter="polishing">Polishing</button>
+        <button class="gallery-filter" data-filter="facility">Facility Management</button>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" style="--ar:1.1" data-category="carpet" data-title="Carpet Shampooing" data-desc="Photos from carpet shampooing projects will be added here as jobs are documented.">
+          <div class="gallery-item__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg><span>Carpet Shampooing — photos coming soon</span></div>
+          <span class="gallery-item__cat">Carpet</span>
+        </div>
+        <div class="gallery-item" style="--ar:0.8" data-category="cleaning" data-title="Deep House &amp; Office Cleaning" data-desc="Photos from deep cleaning projects will be added here as jobs are documented.">
+          <div class="gallery-item__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21c3-6 6-9 9-9s6 3 9 9"/></svg><span>Deep Cleaning — photos coming soon</span></div>
+          <span class="gallery-item__cat">Cleaning</span>
+        </div>
+        <div class="gallery-item" style="--ar:1.3" data-category="polishing" data-title="Marble &amp; Mosaic Polishing" data-desc="Photos from polishing projects will be added here as jobs are documented.">
+          <div class="gallery-item__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg><span>Marble &amp; Mosaic Polishing — photos coming soon</span></div>
+          <span class="gallery-item__cat">Polishing</span>
+        </div>
+        <div class="gallery-item" style="--ar:0.9" data-category="pest" data-title="Pest Control" data-desc="Photos from pest control projects will be added here as jobs are documented.">
+          <div class="gallery-item__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3"/></svg><span>Pest Control — photos coming soon</span></div>
+          <span class="gallery-item__cat">Pest control</span>
+        </div>
+        <div class="gallery-item" style="--ar:1.15" data-category="facility" data-title="Complete Facility Management" data-desc="Photos from facility-management sites will be added here as jobs are documented.">
+          <div class="gallery-item__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 21V7l7-4 7 4v14"/></svg><span>Facility Management — photos coming soon</span></div>
+          <span class="gallery-item__cat">Facility</span>
+        </div>
+        <div class="gallery-item" style="--ar:0.75" data-category="cleaning" data-title="Office Cleaning" data-desc="Photos from office cleaning projects will be added here as jobs are documented.">
+          <div class="gallery-item__ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="16" height="18" rx="1"/></svg><span>Office Cleaning — photos coming soon</span></div>
+          <span class="gallery-item__cat">Cleaning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox__box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+        <h3 id="lightboxTitle">Project photo</h3>
+        <p id="lightboxDesc">Photos from this project will be added here soon.</p>
+        <button class="btn btn--outline btn--sm" style="margin-top:20px" data-close-lightbox>Close</button>
+      </div>
+      <button class="lightbox__close" data-close-lightbox aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- 12 : TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Client feedback</span>
+        <h2>What Chennai clients are saying.</h2>
+      </div>
+      <div class="testi-empty reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <h3>We're collecting reviews from our Chennai clients</h3>
+        <p>Genuine testimonials will appear here as clients share their feedback — we don't publish anything we haven't actually received. Been served by us? We'd love to hear from you on WhatsApp.</p>
+        <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20to%20share%20feedback%20on%20your%20service." target="_blank" rel="noopener" class="btn btn--outline btn--sm">Share your feedback</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 : FINAL CTA -->
   <section class="cta-band reveal">
     <div class="container cta-band__inner">
-      <div>
-        <h2>Ready to experience the Dust to Shine difference?</h2>
-        <p>Free inspection. Transparent quote. No obligation.</p>
-      </div>
+      <h2>Ready to transform your space?</h2>
+      <p>Free inspection. Transparent quote. No obligation.</p>
       <div class="cta-band__actions">
-        <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" class="btn btn--light">Chat on WhatsApp</a>
-        <a href="tel:+919003177051" class="btn btn--outline-light">Call Now</a>
+        <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" class="btn btn--whatsapp btn--shine">Chat on WhatsApp</a>
+        <a href="tel:+919003177051" class="btn btn--ghost">Call Now</a>
+        <a href="#contact" class="btn btn--gold">Get a Quote</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- 13 : QUOTE FORM / CONTACT -->
   <section class="section" id="contact">
     <div class="container">
       <div class="section__head reveal">
         <span class="eyebrow">Get in touch</span>
-        <h2>Tell us what you need &mdash; we'll take it from there.</h2>
+        <h2>Tell us what you need — we'll take it from there.</h2>
         <p>Fill the form and we'll open WhatsApp with your details pre-filled, ready to send.</p>
       </div>
 
@@ -520,60 +670,55 @@
         <div class="contact-info reveal">
           <div class="info-card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>
-              <h3>Visit us</h3>
-              <p>29/10, Ground Floor, Bharathy Dasan Street,<br/>Kumaran Colony 2nd Street, Saidapet,<br/>Chennai &ndash; 600015, Tamil Nadu</p>
-            </div>
+            <div><h3>Visit us</h3><p>29/10, Ground Floor, Bharathy Dasan Street,<br/>Kumaran Colony 2nd Street, Saidapet,<br/>Chennai &ndash; 600015, Tamil Nadu</p></div>
           </div>
           <div class="info-card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <div>
-              <h3>Call or WhatsApp</h3>
-              <p><a href="tel:+919003177051">+91 90031 77051</a></p>
-            </div>
+            <div><h3>Call or WhatsApp</h3><p><a href="tel:+919003177051">+91 90031 77051</a></p></div>
           </div>
           <div class="info-card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-            <div>
-              <h3>Email us</h3>
-              <p><a href="mailto:dusttoshinefacility@gmail.com">dusttoshinefacility@gmail.com</a></p>
-            </div>
+            <div><h3>Email us</h3><p><a href="mailto:dusttoshinefacility@gmail.com">dusttoshinefacility@gmail.com</a></p></div>
           </div>
           <div class="info-card">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <div>
-              <h3>Working hours</h3>
-              <p>Mon &ndash; Sat, 9:00 AM &ndash; 7:00 PM</p>
-            </div>
+            <div><h3>Working hours</h3><p>Mon &ndash; Sat, 9:00 AM &ndash; 7:00 PM</p></div>
           </div>
 
           <div class="map-embed">
-            <iframe
-              title="Dust to Shine location map"
-              src="https://www.google.com/maps?q=Saidapet,+Chennai,+Tamil+Nadu+600015&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <iframe title="Dust to Shine location map" src="https://www.google.com/maps?q=Saidapet,+Chennai,+Tamil+Nadu+600015&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
 
-        <form class="contact-form reveal" id="leadForm">
-          <div class="form-row">
+        <form class="contact-form reveal" id="leadForm" novalidate>
+          <div class="form-row" id="rowName">
             <label for="fName">Full name *</label>
             <input type="text" id="fName" name="name" required placeholder="Your name" />
+            <span class="field-error">Please enter your name.</span>
           </div>
+
           <div class="form-row form-row--split">
-            <div>
+            <div class="form-row" id="rowPhone">
               <label for="fPhone">Phone number *</label>
               <input type="tel" id="fPhone" name="phone" required placeholder="+91 90031 77051" pattern="[0-9+\s]{7,15}" />
+              <span class="field-error">Enter a valid phone number.</span>
             </div>
             <div>
               <label for="fEmail">Email</label>
               <input type="email" id="fEmail" name="email" placeholder="you@example.com" />
             </div>
           </div>
+
+          <div class="form-row">
+            <label>Property type *</label>
+            <div class="segmented">
+              <label><input type="radio" name="propertyType" value="Residential" checked /><span>Residential</span></label>
+              <label><input type="radio" name="propertyType" value="Commercial" /><span>Commercial</span></label>
+            </div>
+          </div>
+
           <div class="form-row form-row--split">
-            <div>
+            <div class="form-row" id="rowService">
               <label for="fService">Service needed *</label>
               <select id="fService" name="service" required>
                 <option value="" disabled selected>Select a service</option>
@@ -587,21 +732,32 @@
                 <option>Complete Facility Management</option>
                 <option>Other</option>
               </select>
+              <span class="field-error">Please choose a service.</span>
             </div>
             <div>
-              <label for="fTime">Preferred contact time</label>
-              <select id="fTime" name="time">
-                <option value="">Any time</option>
-                <option>Morning (9am &ndash; 12pm)</option>
-                <option>Afternoon (12pm &ndash; 4pm)</option>
-                <option>Evening (4pm &ndash; 7pm)</option>
-              </select>
+              <label for="fLocation">Property / location</label>
+              <input type="text" id="fLocation" name="location" placeholder="Area, Chennai" />
             </div>
           </div>
+
+          <div class="form-row">
+            <label for="fDate">Preferred date</label>
+            <input type="date" id="fDate" name="date" />
+          </div>
+
           <div class="form-row">
             <label for="fMessage">Message</label>
             <textarea id="fMessage" name="message" rows="4" placeholder="Tell us about your space and requirement..."></textarea>
           </div>
+
+          <div class="consent-row" id="rowConsent">
+            <input type="checkbox" id="fConsent" name="consent" />
+            <div>
+              <label for="fConsent">I agree to be contacted by Dust to Shine via call, WhatsApp or email about this enquiry. *</label>
+              <span class="field-error">Please confirm you're okay with us contacting you.</span>
+            </div>
+          </div>
+
           <button type="submit" class="btn btn--primary btn--block btn--shine">
             <span>Send via WhatsApp</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -614,7 +770,7 @@
 
 </main>
 
-<!-- FOOTER -->
+<!-- 15 : FOOTER -->
 <footer class="site-footer">
   <div class="container footer__inner">
     <div class="footer__brand">
@@ -623,19 +779,19 @@
     </div>
 
     <div class="footer__col">
-      <h4>Quick Links</h4>
+      <h4>Quick links</h4>
       <a href="#services">Services</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#why-us">Why us</a>
+      <a href="#amc">AMC plans</a>
       <a href="#contact">Contact</a>
     </div>
 
     <div class="footer__col">
       <h4>Services</h4>
-      <a href="#services">Carpet Shampooing</a>
-      <a href="#services">Deep Cleaning</a>
-      <a href="#services">Pest Control</a>
-      <a href="#services">Facility Management</a>
+      <a href="#services">Carpet shampooing</a>
+      <a href="#services">Deep cleaning</a>
+      <a href="#services">Pest control</a>
+      <a href="#services">Facility management</a>
     </div>
 
     <div class="footer__col">
@@ -649,10 +805,20 @@
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
       <span>&copy; <span id="year"></span> Dust to Shine Facility Management Services. All rights reserved.</span>
-      <span>GSTIN 33BCLPD8245A1Z0 &middot; UDYAM-TN-02-0138197</span>
+      <span style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+        <span>GSTIN 33BCLPD8245A1Z0 &middot; UDYAM-TN-02-0138197</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </span>
     </div>
   </div>
 </footer>
+
+<!-- Sticky mobile action bar -->
+<div class="mobile-cta-bar">
+  <a href="tel:+919003177051"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a>
+  <a href="https://wa.me/919003177051?text=Hi%20DTS%2C%20I%27d%20like%20a%20free%20quote." target="_blank" rel="noopener" class="is-whatsapp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.45 1.29 4.9L2.06 22l5.31-1.35a9.86 9.86 0 0 0 4.67 1.19h.01c5.46 0 9.9-4.45 9.9-9.93A9.83 9.83 0 0 0 12.04 2Zm5.79 14.16c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.61-2.92-1.26-4.82-4.19-4.97-4.39-.15-.2-1.19-1.58-1.19-3.02s.75-2.14 1.02-2.43c.26-.29.57-.36.76-.36h.55c.18 0 .42-.07.65.5.24.58.81 2 .88 2.14.07.15.11.32.02.51-.09.2-.14.32-.28.5-.14.17-.29.38-.42.51-.14.14-.29.29-.12.57.16.29.73 1.2 1.57 1.94 1.08.96 1.99 1.26 2.28 1.4.29.15.46.13.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.15.26.09 1.66.79 1.94.93.29.15.48.22.55.34.07.13.07.72-.17 1.42Z"/></svg> WhatsApp</a>
+</div>
 
 <!-- Floating actions -->
 <div class="fab-stack">
