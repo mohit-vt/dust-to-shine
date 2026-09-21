@@ -5,10 +5,26 @@
 
   /* ---------- Intro brand film ---------- */
   const brandFilm = document.getElementById("brandFilm");
-  window.setTimeout(() => {
+  function endIntro() {
     if (brandFilm) brandFilm.classList.add("finished");
-    document.getElementById("top").className = "intro-complete";
-  }, reducedMotion ? 100 : 2800);
+    const topEl = document.getElementById("top");
+    if (topEl) topEl.className = "intro-complete";
+  }
+  window.setTimeout(endIntro, reducedMotion ? 100 : 2800);
+  brandFilm && brandFilm.addEventListener("click", endIntro);
+
+  const filmMotes = document.querySelector(".film-motes");
+  if (filmMotes && !reducedMotion) {
+    for (let i = 0; i < 20; i++) {
+      const s = document.createElement("span");
+      s.style.left = Math.random() * 100 + "%";
+      s.style.top = 35 + Math.random() * 55 + "%";
+      s.style.setProperty("--dx", Math.round(Math.random() * 70 - 35) + "px");
+      s.style.animationDuration = (3 + Math.random() * 3.5).toFixed(2) + "s";
+      s.style.animationDelay = (Math.random() * 3).toFixed(2) + "s";
+      filmMotes.appendChild(s);
+    }
+  }
 
   /* ---------- Scroll progress + header state ---------- */
   const header = document.getElementById("siteHeader");
