@@ -59,7 +59,7 @@ h2 em{color:var(--accent);font-weight:400;font-style:italic}
 .dust i:nth-child(3n){left:58%;top:25%;animation-delay:-4s}
 
 /* ---------- Trust strip ---------- */
-.trust{display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper-tint);border-bottom:1px solid var(--line)}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);border-bottom:1px solid var(--line)}
 .trust div{min-height:98px;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:13px;color:var(--ink-soft);font-size:13px}
 .trust svg{color:var(--accent);width:21px}
 
@@ -100,7 +100,7 @@ h2 em{color:var(--accent);font-weight:400;font-style:italic}
 .text-link svg{width:18px}
 
 /* ---------- Process ---------- */
-.process{background:var(--paper-tint)}
+.process{background:var(--paper);border-top:1px solid var(--line)}
 .section-intro.compact{display:block}
 .section-intro.compact .kicker{margin-bottom:22px}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
@@ -120,7 +120,7 @@ h2 em{color:var(--accent);font-weight:400;font-style:italic}
 .btn-light{background:#fff;color:var(--ink)}
 
 /* ---------- Industries ---------- */
-.industries{background:var(--paper-tint);color:var(--ink)}
+.industries{background:var(--paper);color:var(--ink);border-top:1px solid var(--line)}
 .industry-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
 .industry-grid>div{min-height:90px;display:grid;grid-template-columns:55px 1fr 30px;align-items:center;border-bottom:1px solid var(--line);padding:0 18px;transition:.25s}
 .industry-grid>div:nth-child(odd){border-right:1px solid var(--line)}
@@ -146,7 +146,7 @@ h2 em{color:var(--accent);font-weight:400;font-style:italic}
 .plan-card a svg{width:17px}
 
 /* ---------- Contact / quote form ---------- */
-.contact{background:var(--paper-tint);display:grid;grid-template-columns:.85fr 1.15fr;gap:100px}
+.contact{background:var(--paper);border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:100px}
 .contact h2{font-size:clamp(48px,5vw,76px);line-height:1;margin:0;color:var(--ink)}
 .contact-copy>p:not(.kicker){color:var(--muted);line-height:1.75;margin:28px 0}
 .contact-list{display:grid;gap:22px;margin-top:38px}
@@ -154,7 +154,11 @@ h2 em{color:var(--accent);font-weight:400;font-style:italic}
 .contact-list svg{width:20px;color:var(--accent);flex:none}
 .contact-list span{font-size:13px;line-height:1.5}
 .contact-list small{display:block;text-transform:uppercase;letter-spacing:.14em;color:#8fa098;font-size:9px;margin-bottom:5px}
-.quote-form{background:#fff;color:var(--ink);padding:38px;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,32,25,.08)}
+.contact-map{margin-top:34px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper-tint);box-shadow:0 18px 45px rgba(20,32,25,.06)}
+.contact-map iframe{display:block;width:100%;height:260px;border:0}
+.contact-map a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 16px;font-size:12px;font-weight:700;color:var(--accent);border-top:1px solid var(--line);background:#fff}
+.contact-map a:hover{color:var(--accent-strong)}
+.quote-form{align-self:start;background:#fff;color:var(--ink);padding:38px;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(20,32,25,.08)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .quote-form label{display:grid;gap:8px;margin-bottom:16px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--ink-soft)}
 .quote-form input,.quote-form select,.quote-form textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:#fff;padding:13px;color:var(--ink);outline:none}
@@ -180,6 +184,7 @@ footer{background:#fff;padding:60px clamp(24px,6vw,100px) 25px;border-top:1px so
 
 /* ---------- Floating actions ---------- */
 .float-wa{position:fixed;right:24px;bottom:24px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;font-weight:900;z-index:35;box-shadow:0 10px 30px rgba(0,0,0,.35);animation:pulse 2.4s infinite;font-size:12px}
+.float-wa svg{width:30px;height:30px;fill:currentColor}
 .mobile-actions{display:none}
 
 /* ---------- Keyframes ---------- */
@@ -304,7 +309,7 @@ footer{background:#fff;padding:60px clamp(24px,6vw,100px) 25px;border-top:1px so
   .mobile-actions{position:fixed;display:grid;grid-template-columns:1fr 1fr;left:0;right:0;bottom:0;z-index:40;background:#fff;padding:10px 12px;gap:8px;border-top:1px solid var(--line)}
   .mobile-actions a{min-height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:800;background:var(--paper-tint);color:var(--ink)}
   .mobile-actions a:last-child{background:#25d366;color:#fff}
-  .mobile-actions svg{width:17px}
+  .mobile-actions svg{width:17px;height:17px}
   footer{padding-bottom:85px}
   .logo-frame{border-radius:15px}
   .logo-frame img{padding:12px}
